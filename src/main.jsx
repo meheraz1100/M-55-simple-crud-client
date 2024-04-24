@@ -6,12 +6,18 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import users from './Components/users.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>
   },
+  {
+    path: "/user",
+    element: <users></users>,
+    loader: () => fetch()
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
